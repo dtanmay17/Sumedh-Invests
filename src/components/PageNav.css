@@ -1,0 +1,97 @@
+/* ── PageNav.css ──────────────────────────────────── */
+
+.page-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding-top: var(--space-3xl);
+  padding-bottom: var(--space-3xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.page-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  text-decoration: none;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-card);
+  transition: all var(--transition-mid);
+  min-width: 160px;
+}
+
+.page-nav__btn:hover {
+  border-color: var(--color-border-gold);
+  background: var(--color-gold-pale);
+  transform: translateX(0) translateY(-2px);
+}
+
+.page-nav__btn--prev:hover { transform: translateX(-4px) translateY(-2px); }
+.page-nav__btn--next:hover { transform: translateX(4px)  translateY(-2px); }
+
+.page-nav__btn--next {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.page-nav__arrow {
+  font-size: 1.2rem;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.page-nav__label {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-nav__dir {
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.page-nav__name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-cream);
+}
+
+/* ── Dots ── */
+.page-nav__dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.page-nav__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-text-faint);
+  transition: all var(--transition-mid);
+  flex-shrink: 0;
+}
+
+.page-nav__dot:hover {
+  background: var(--color-text-muted);
+  transform: scale(1.2);
+}
+
+.page-nav__dot--active {
+  background: var(--color-gold);
+  width: 24px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 8px rgba(212,175,55,0.5);
+}
+
+@media (max-width: 600px) {
+  .page-nav { flex-wrap: wrap; }
+  .page-nav__btn { min-width: 120px; }
+  .page-nav__dots { order: -1; width: 100%; justify-content: center; }
+}

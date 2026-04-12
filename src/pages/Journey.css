@@ -1,0 +1,248 @@
+/* ── Journey.css ───────────────────────────────── */
+
+/* ── Hero ── */
+.journey-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-bg-soft) 0%, var(--color-bg) 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.journey-hero__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 80%, rgba(212,175,55,0.08), transparent 70%);
+  pointer-events: none;
+}
+
+.journey-hero__heading {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.1;
+  margin: var(--space-lg) 0 var(--space-lg);
+}
+
+.journey-hero__italic {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.journey-hero__sub {
+  max-width: 580px;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Stats section ── */
+.journey-stats-section {
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-soft);
+}
+
+.journey-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+}
+
+.journey-stat {
+  text-align: center;
+  padding: var(--space-lg);
+  border-right: 1px solid var(--color-border);
+}
+
+.journey-stat:last-child { border-right: none; }
+
+.journey-stat__val {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-cream);
+  line-height: 1;
+}
+
+.journey-stat__val span { color: var(--color-gold); }
+
+.journey-stat__label {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin-top: 0.35rem;
+}
+
+/* ── Timeline ── */
+.journey-timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+/* Centre vertical line */
+.journey-timeline__line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, transparent, var(--color-border-gold) 5%, var(--color-border-gold) 95%, transparent);
+}
+
+/* ── Timeline Item ── */
+.journey-item {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  gap: 0;
+  margin-bottom: var(--space-2xl);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.journey-item--visible { opacity: 1; transform: none !important; }
+
+/* Left items: card on left, spacer on right */
+.journey-item--left  { transform: translateX(-20px); }
+.journey-item--right { transform: translateX(20px); }
+
+.journey-item--left  .journey-card    { grid-column: 1; text-align: right; align-items: flex-end; }
+.journey-item--left  .journey-node    { grid-column: 2; }
+.journey-item--left  .journey-spacer  { grid-column: 3; }
+
+.journey-item--right .journey-spacer  { grid-column: 1; }
+.journey-item--right .journey-node    { grid-column: 2; }
+.journey-item--right .journey-card    { grid-column: 3; text-align: left; align-items: flex-start; }
+
+/* ── Journey Card ── */
+.journey-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  transition: all var(--transition-mid);
+}
+
+.journey-card:hover {
+  border-color: var(--color-border-gold);
+  box-shadow: var(--shadow-gold);
+  transform: scale(1.01);
+}
+
+.journey-card__tag   { margin-bottom: var(--space-xs); }
+.journey-card__year  { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.12em; color: var(--color-gold); }
+.journey-card__icon  { font-size: 1.8rem; }
+.journey-card__title { font-size: 1.05rem; color: var(--color-cream); }
+.journey-card__desc  { font-size: 0.875rem; color: var(--color-text-muted); line-height: 1.65; }
+
+/* ── Centre node ── */
+.journey-node {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: var(--space-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.journey-node__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  border: 3px solid var(--color-bg);
+  box-shadow: 0 0 0 2px var(--color-gold), 0 0 16px rgba(212,175,55,0.4);
+  flex-shrink: 0;
+}
+
+/* ── Lessons Grid ── */
+.journey-lessons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-lg);
+}
+
+.journey-lesson-card__num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--color-gold-pale);
+  line-height: 1;
+  margin-bottom: var(--space-md);
+}
+
+.journey-lesson-card__title {
+  font-size: 1.05rem;
+  margin-bottom: var(--space-sm);
+}
+
+.journey-lesson-card__text {
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+/* ── Books ── */
+.journey-books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.journey-book-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: all var(--transition-mid);
+}
+
+.journey-book-card:hover {
+  border-color: var(--color-border-gold);
+  transform: translateY(-4px);
+}
+
+.journey-book-card__emoji  { font-size: 2rem; margin-bottom: var(--space-md); }
+.journey-book-card__title  { font-weight: 700; font-size: 0.9rem; color: var(--color-cream); margin-bottom: 4px; }
+.journey-book-card__author { font-size: 0.78rem; color: var(--color-text-faint); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  /* Stack timeline to single column */
+  .journey-timeline__line { left: 28px; transform: none; }
+
+  .journey-item {
+    grid-template-columns: 60px 1fr;
+    grid-template-rows: auto;
+  }
+
+  .journey-item--left  .journey-card,
+  .journey-item--right .journey-card {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .journey-item--left  .journey-node,
+  .journey-item--right .journey-node { grid-column: 1; grid-row: 1; padding-top: var(--space-xl); }
+
+  .journey-item--left  .journey-spacer,
+  .journey-item--right .journey-spacer { display: none; }
+}
+
+@media (max-width: 768px) {
+  .journey-stats         { grid-template-columns: repeat(2, 1fr); }
+  .journey-stat          { border-right: none; border-bottom: 1px solid var(--color-border); }
+  .journey-stat:nth-child(odd) { border-right: 1px solid var(--color-border); }
+  .journey-lessons-grid  { grid-template-columns: 1fr; }
+  .journey-books-grid    { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .journey-books-grid { grid-template-columns: 1fr; }
+}

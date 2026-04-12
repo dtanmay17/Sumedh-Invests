@@ -1,0 +1,246 @@
+/* ── Contact.css ───────────────────────────────── */
+
+.contact-hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-bg-soft) 0%, var(--color-bg) 100%);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-hero__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 50%, rgba(212,175,55,0.07), transparent 70%);
+  pointer-events: none;
+}
+
+.contact-hero__heading {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  line-height: 1.1;
+  margin: var(--space-lg) 0;
+}
+
+.contact-hero__italic {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-hero__sub {
+  max-width: 580px;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Layout ── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+/* ── Info Cards ── */
+.contact-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+}
+
+.contact-info-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: all var(--transition-mid);
+}
+
+.contact-info-card:hover {
+  border-color: var(--color-border-gold);
+  background: var(--color-gold-pale);
+  transform: translateX(4px);
+}
+
+.contact-info-card__icon {
+  font-size: 1.5rem;
+  width: 44px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.contact-info-card__label {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-bottom: 2px;
+}
+
+.contact-info-card__value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-cream);
+}
+
+.contact-info-card__sub {
+  font-size: 0.72rem;
+  color: var(--color-text-faint);
+  margin-top: 2px;
+}
+
+.contact-info-card__arrow {
+  margin-left: auto;
+  color: var(--color-gold);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── Hours ── */
+.contact-hours {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.contact-hours h4 {
+  margin-bottom: var(--space-md);
+  font-size: 0.95rem;
+}
+
+.contact-hours__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm) var(--space-xl);
+}
+
+.contact-hours__grid span:nth-child(odd) {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+.contact-hours__grid span:nth-child(even) {
+  font-size: 0.82rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* ── Cred badges ── */
+.contact-cred {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.contact-cred__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Form Card ── */
+.contact-form-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border-gold);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-gold);
+}
+
+.contact-form-card__header {
+  background: linear-gradient(135deg, rgba(212,175,55,0.1), transparent);
+  padding: var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.contact-form-card__header h3 {
+  font-size: 1.3rem;
+  margin-bottom: var(--space-sm);
+}
+
+.contact-form-card__header p { font-size: 0.875rem; }
+
+.contact-form {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+}
+
+.contact-form__note {
+  font-size: 0.75rem;
+  color: var(--color-text-faint);
+  text-align: center;
+}
+
+/* ── Success State ── */
+.contact-form-success {
+  padding: var(--space-3xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-lg);
+}
+
+.contact-form-success__icon { font-size: 3rem; }
+
+.contact-form-success h4 {
+  font-size: 1.3rem;
+  color: var(--color-success);
+}
+
+.contact-form-success p {
+  font-size: 0.9rem;
+  max-width: 340px;
+}
+
+/* ── WhatsApp Section ── */
+.contact-wa-section {
+  background: linear-gradient(135deg, rgba(37,211,102,0.06), transparent);
+  border-top: 1px solid rgba(37,211,102,0.15);
+  border-bottom: 1px solid rgba(37,211,102,0.15);
+  padding: var(--space-2xl) 0;
+}
+
+.contact-wa {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+}
+
+.contact-wa__icon { font-size: 2.5rem; flex-shrink: 0; }
+
+.contact-wa h3 { color: var(--color-cream); font-size: 1.2rem; margin-bottom: 0.35rem; }
+.contact-wa p  { font-size: 0.875rem; }
+
+.contact-wa .btn { flex-shrink: 0; margin-left: auto; }
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-right  { max-width: 600px; }
+}
+
+@media (max-width: 600px) {
+  .contact-form__row { grid-template-columns: 1fr; }
+  .contact-wa        { flex-direction: column; text-align: center; }
+  .contact-wa .btn   { margin-left: 0; }
+}
