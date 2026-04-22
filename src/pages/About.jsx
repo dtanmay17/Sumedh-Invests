@@ -50,7 +50,7 @@ export default function About() {
         <div className="container">
           <span className="section-tag">About Me</span>
           <h1 className="about-hero__heading">
-            Arjun Sharma —<br />
+            Sumedh Rasal —<br />
             <em className="about-hero__italic">Engineer turned<br />Wealth Builder</em>
           </h1>
           <p className="about-hero__sub">
@@ -67,7 +67,7 @@ export default function About() {
           {/* Side portrait card */}
           <div className="about-portrait-wrap">
             <div className="about-portrait">
-              <div className="about-portrait__avatar">AS</div>
+              <div className="about-portrait__avatar">SR</div>
               <div className="about-portrait__details">
                 <div className="about-portrait__detail">
                   <span>Name</span>
@@ -134,7 +134,7 @@ export default function About() {
 
             <p>
               When placements came in 2023, I had multiple core engineering offers. I turned them all
-              down. Instead, I registered my ARN number and launched <strong>Arjun Wealth Advisors</strong>
+              down. Instead, I registered my ARN number and launched <strong>Sumedh Invests</strong>
               — a one-person wealth advisory firm, starting with ten clients from my own college batch.
             </p>
 
@@ -201,12 +201,12 @@ export default function About() {
 
           <div className="about-values-grid">
             {[
-              { icon: '🤝', title: 'Client-First Always', desc: 'Your goals come before any commission consideration. I only recommend what is right for you.' },
-              { icon: '🔍', title: 'Radical Transparency', desc: 'I explain every recommendation. You will always know why a fund is being chosen for your portfolio.' },
-              { icon: '📚', title: 'Continuous Learning', desc: 'Markets evolve. I read, research, and upskill constantly to give you the most current advice.' },
-              { icon: '⏳', title: 'Long-Term Thinking', desc: 'Wealth is built over decades, not months. I help you stay the course through all market cycles.' },
-              { icon: '🔐', title: 'Data Privacy', desc: 'Your financial data is kept strictly confidential and never shared with any third party.' },
-              { icon: '💡', title: 'Financial Education', desc: 'I believe informed investors make better decisions. I host monthly webinars for my clients.' },
+              { icon: '🤝', title: 'Client-First Always',   desc: 'Your goals come before any commission consideration. I only recommend what is right for you.' },
+              { icon: '🔍', title: 'Radical Transparency',  desc: 'I explain every recommendation. You will always know why a fund is being chosen for your portfolio.' },
+              { icon: '📚', title: 'Continuous Learning',   desc: 'Markets evolve. I read, research, and upskill constantly to give you the most current advice.' },
+              { icon: '⏳', title: 'Long-Term Thinking',    desc: 'Wealth is built over decades, not months. I help you stay the course through all market cycles.' },
+              { icon: '🔐', title: 'Data Privacy',          desc: 'Your financial data is kept strictly confidential and never shared with any third party.' },
+              { icon: '💡', title: 'Financial Education',   desc: 'I believe informed investors make better decisions. I host monthly webinars for my clients.' },
             ].map((v) => (
               <div className="card about-value-card" key={v.title}>
                 <div className="about-value-card__icon">{v.icon}</div>
